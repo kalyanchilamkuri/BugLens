@@ -32,66 +32,6 @@ main .left {
   border-radius: 0.7rem;
 }
 
-
-.code pre {
-  background: #2d2d2d;
-  padding: 1rem;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
-.review {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  background-color: rgb(219, 219, 255);
-  color: black;
-  padding: 0.5rem 2rem;
-  font-weight: 500;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 0.7rem;
-}
-
-main .right {
-  background-color: grey;
-} */
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body, #root {
-  height: 100%;
-  width: 100%;
-}
-
-main {
-  height: 100%;
-  width: 100%;
-  padding: 1.5rem;
-  display: flex;
-  gap: 1rem;
-}
-
-main .left, main .right {
-  height: 100%;
-  flex-basis: 50%;
-  border-radius: 0.7rem;
-}
-
-main .left {
-  background-color: black;
-  position: relative;
-  padding: 1rem;
-  color: white;
-  border: 2px solid white; 
-  border-radius: 0.7rem;
-}
-
 .code pre {
   background: #2d2d2d;
   padding: 1rem;
@@ -124,6 +64,174 @@ main .right {
   border-radius: 0.7rem;
   overflow: auto;
 } */
+/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left, main .right {
+  flex: 1; 
+  height: 100%;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+main .left {
+  background-color: black;
+  position: relative;
+  padding: 1rem;
+  color: white;
+  border: 2px solid white;
+  border-radius: 0.7rem;
+}
+
+.code pre {
+  background: #2d2d2d;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: linear-gradient(45deg, #ff6b6b, #ff4757);
+  color: white;
+  padding: 0.7rem 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(255, 71, 87, 0.5);
+}
+
+.review:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(255, 71, 87, 0.7);
+}
+
+.right {
+  background-color: #2c3e50;
+  padding: 1rem;
+  color: white;
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border: 2px solid white;
+  border-radius: 0.7rem;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.right p {
+  position: relative;
+  padding-left: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.right p::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ff4757;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+.right {
+  background-color: #2c3e50;
+  padding: 1rem;
+  color: white;
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border: 2px solid white;
+  border-radius: 0.7rem;
+  position: absolute;
+  right: -50%;
+  top: 1.5rem;
+  height: calc(100% - 3rem);
+  width: 45%;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, right 0.5s ease-out;
+}
+
+.right.show {
+  right: 1rem;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.right p {
+  position: relative;
+  padding-left: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.right p::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ff4757;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
 
 * {
   margin: 0;
@@ -166,7 +274,6 @@ main .left {
   overflow-x: auto;
 }
 
-/* Improved Review Button */
 .review {
   position: absolute;
   bottom: 1rem;
@@ -188,17 +295,17 @@ main .left {
   box-shadow: 0px 6px 12px rgba(255, 71, 87, 0.7);
 }
 
-/* Right Panel Animation */
 .right {
-  background-color: #2c3e50;
+  background-color: #1e1e1e;
   padding: 1rem;
   color: white;
   font-family: "Fira Code", monospace;
   font-size: 16px;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  border: 2px solid white;
   border-radius: 0.7rem;
+  border: 2px solid white;
+  min-height: 200px;
+  max-height: 80vh;
+  overflow-y: auto;
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -209,31 +316,134 @@ main .left {
   transform: translateX(0);
 }
 
-/* Line-by-line review effect */
 .right p {
-  position: relative;
-  padding-left: 1.5rem;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
   opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 0.5s forwards;
-}
-
-.right p::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #ff4757;
-  font-size: 1.2rem;
-  font-weight: bold;
+  animation: fadeIn 0.7s forwards;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    width: 0;
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    width: 100%;
+  }
+} 
+ */
+
+
+ /* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Main Layout */
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Ensuring Left and Right Panels Are Equal */
+main .left, main .right {
+  flex: 1; /* Makes them take equal width */
+  height: 100%; /* Ensures they are equal height */
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Panel (Code Editor) */
+main .left {
+  background-color: black;
+  padding: 1rem;
+  color: white;
+  border: 2px solid white;
+  border-radius: 0.7rem;
+  position: relative;
+}
+
+/* Code Styling */
+.code pre {
+  background: #2d2d2d;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* Review Button */
+.review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: linear-gradient(45deg, #ff6b6b, #ff4757);
+  color: white;
+  padding: 0.7rem 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(255, 71, 87, 0.5);
+}
+
+.review:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(255, 71, 87, 0.7);
+}
+
+/* Right Panel (Review Section) */
+main .right {
+  background-color: #1e1e1e; /* Dark theme like VS Code */
+  padding: 1rem;
+  color: white;
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  border-radius: 0.7rem;
+  border: 2px solid white;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Show class to make it visible */
+main .right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Word-by-word reveal effect */
+main .right p {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  animation: fadeIn 0.7s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
   }
 }
