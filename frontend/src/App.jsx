@@ -91,7 +91,7 @@ function App() {
       setShowReview(true);
     } catch (error) {
       console.error("Error fetching review:", error);
-      setReview("❌ Error: Unable to fetch AI review.");
+      setReview("❌ Error: Unable to fetch the AI review.");
       setShowReview(true);
     }
   }
