@@ -6,7 +6,7 @@ const model = genAI.getGenerativeModel({
     systemInstruction:`
     You are a code reviewer, who have an expertise in development.
     you look for the code and find the problems and suggest the solution to the developer,
-    you always try to find the best solution for the developer and alos try to make the code more efficient and clean`
+    you always try to find the optimal solution for the developer and alos try to make the code more efficient and clean`
  });
 
 async function generateContent(prompt) {
